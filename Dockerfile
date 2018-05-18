@@ -66,6 +66,7 @@ RUN apt-get -q update && \
          software-properties-common \
      #    ssh \
          sudo \
+         locales \
      #    sysstat \
      #    tar \
      #    tcpdump \
@@ -185,13 +186,13 @@ RUN add-apt-repository -y ppa:openjdk-r/ppa
 #         graphviz \
 #         && rm -rf /var/lib/apt/lists/*
 
-# Configure locales
-# RUN locale-gen en_US.UTF-8 && \
-#     dpkg-reconfigure locales
+Configure locales
+RUN locale-gen en_US.UTF-8 && \
+    dpkg-reconfigure locales
 
-# # Fix permissions
-# RUN chown root:syslog /var/log \
-#     && chmod 755 /etc/default
+# Fix permissions
+RUN chown root:syslog /var/log \
+    && chmod 755 /etc/default
 
 RUN mkdir /tmp/dumps
 RUN mkdir /workspace && mkdir -p /var/ccache && ln -s /var/ccache /tmp/ccache
