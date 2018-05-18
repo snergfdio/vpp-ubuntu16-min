@@ -63,7 +63,7 @@ RUN apt-get -q update && \
      #    screen \
      #    shunit2 \
      #    socat \
-     #    software-properties-common \
+         software-properties-common \
      #    ssh \
          sudo \
      #    sysstat \
