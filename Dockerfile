@@ -186,7 +186,7 @@ RUN add-apt-repository -y ppa:openjdk-r/ppa
 #         graphviz \
 #         && rm -rf /var/lib/apt/lists/*
 
-Configure locales
+#Configure locales
 RUN locale-gen en_US.UTF-8 && \
     dpkg-reconfigure locales
 
