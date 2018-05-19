@@ -191,7 +191,7 @@ RUN locale-gen en_US.UTF-8 && \
     dpkg-reconfigure locales
 
 # Fix permissions
-RUN chown root:syslog /var/log \
+RUN addgroup syslog && chown root:syslog /var/log \
     && chmod 755 /etc/default
 
 RUN mkdir /tmp/dumps
