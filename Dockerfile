@@ -19,6 +19,7 @@ ADD files/98fd.io.list /etc/apt/sources.list.d/98fd.io.list
 ADD files/sshconfig /root/.ssh/config
 ADD files/wrapdocker /usr/local/bin/wrapdocker
 RUN chmod +x /usr/local/bin/wrapdocker
+RUN curl -L https://packagecloud.io/fdio/master/gpgkey |sudo apt-key add -
 
 RUN apt update && apt install -y -qq \
 		software-properties-common \
