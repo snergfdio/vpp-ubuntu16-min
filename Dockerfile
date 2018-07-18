@@ -14,6 +14,8 @@ ENV DPDK_DOWNLOAD_DIR=/w/Downloads
 ENV VPP_PYTHON_PREFIX=/var/cache/vpp/python
 
 ADD files/99fd.io.list /etc/apt/sources.list.d/99fd.io.list
+ADD files/98fd.io.list /etc/apt/sources.list.d/98fd.io.list
+
 ADD files/sshconfig /root/.ssh/config
 ADD files/wrapdocker /usr/local/bin/wrapdocker
 RUN chmod +x /usr/local/bin/wrapdocker
@@ -149,4 +151,5 @@ RUN git clone https://gerrit.fd.io/r/vpp /w/workspace/vpp-test-poc-verify-master
 RUN mkdir -p /run/shm && rm -f /var/cache/vpp/python/papi-install.done && rm -f /var/cache/vpp/python/virtualenv/lib/python2.7/site-packages/vpp_papi-*-py2.7.egg
 VOLUME /var/lib/docker
 RUN echo 'Port 6022' >>/etc/ssh/sshd_config
+ADD files/badkeypub /root/.ssh/authorized_keys
 
