@@ -77,6 +77,7 @@ RUN apt update && apt install -y vpp-dpdk-dev vpp-dpdk-dkms \
         python-pyparsing \
         doxygen \
         graphviz \
+        dtach \
         && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/run/sshd
