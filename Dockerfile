@@ -113,8 +113,7 @@ RUN apt-get -q update && \
         && rm -rf /var/lib/apt/lists/*
 
 # Configure locales
-RUN locale-gen en_US.UTF-8 && \
-    dpkg-reconfigure locales
+RUN locale-gen en_US 
 
 # Fix permissions
 RUN chown root:syslog /var/log \
